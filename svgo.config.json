@@ -3,7 +3,7 @@
     {
       "name": "cleanupIDs",
       "params": {
-        "preserve": [ "qrcode" ]
+        "preserve": [ "qrcode", "void", "fill" ]
       }
     }
   ]
