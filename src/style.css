@@ -33,6 +33,12 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
 .giraffe {
   min-width: 400px;
 }

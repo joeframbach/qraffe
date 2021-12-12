@@ -7,7 +7,7 @@
     "clean": "rm -rf docs",
     "lint": "eslint ./src --ext .js,.ts",
     "start": "parcel",
-    "release": "npm run clean && npm run lint && npm run typecheck && parcel build --detailed-report",
+    "release": "npm run clean && npm run lint && npm run typecheck && parcel build --detailed-report && cp src/CNAME docs/CNAME",
     "typecheck": "tsc --noEmit"
   },
   "targets": {
