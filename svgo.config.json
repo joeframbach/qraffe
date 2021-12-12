@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "name": "cleanupIDs",
+      "params": {
+        "preserve": [ "qrcode" ]
+      }
+    }
+  ]
+}
