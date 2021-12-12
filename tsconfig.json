@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"],
+}

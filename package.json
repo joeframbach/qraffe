@@ -1,0 +1,39 @@
+{
+  "name": "qraffe",
+  "source": "src/index.html",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "eslint ./src --ext .js,.ts",
+    "start": "parcel",
+    "release": "npm run clean && npm run lint && npm run typecheck && parcel build --detailed-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "browserslist": "> 1%",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@qrcode/svg": "*",
+    "@svgdotjs/svg.js": "^3.1.1",
+    "@types/qrcode": "^1.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.12",
+    "eslint": "^8.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "parcel": "^2.0.0-rc.0",
+    "postcss": "^8.4.4",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.6",
+    "qrcode": "^1.5.0",
+    "sharp": "^0.29.3",
+    "svg2pdf.js": "^2.2.0",
+    "typescript": "^4.5.2",
+    "wifi-qr": "^0.0.10"
+  }
+}

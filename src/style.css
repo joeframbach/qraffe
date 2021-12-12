@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Mali';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Mali-Medium.woff2") format("woff2");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f9f8e9;
+}
+
+.menu {
+  text-align: center;
+  h1 {
+    display: inline-block;
+    font-family: "Mali", cursive;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.giraffe {
+  min-width: 400px;
+}
+
+.frame {
+  object {
+    height: 100%;
+  }
+
+  img {
+    border: solid 2px;
+    border-bottom-color: #ffe;
+    border-left-color: #eed;
+    border-right-color: #eed;
+    border-top-color: #ccb;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  background-color: #b9a37a;
+  border: solid 40px #eee;
+  border-bottom-color: #fff;
+  border-left-color: #eee;
+  border-radius: 2px;
+  border-right-color: #eee;
+  border-top-color: #ddd;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25) inset, 0 20px 10px 5px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 40px 40px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  text-align: center;
+  &:before {
+    border-radius: 2px;
+    bottom: -6px;
+    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.25) inset;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+  }
+  &:after {
+    border-radius: 2px;
+    bottom: -8px;
+    content: "";
+    left: -8px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+  }
+
+  &.lean-left {
+    transform: perspective(1000px) rotateY(15deg) rotateX(20deg);
+  }
+  &.lean-right {
+    transform: perspective(1000px) rotateY(-15deg) rotateX(20deg);
+  }
+}

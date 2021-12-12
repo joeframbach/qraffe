@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Say Hello</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <h1>qraffe</h1>
+    </div>
+    <div class="container">
+      <div class="left-rail">
+        <form>
+          <p>Generate Wifi QR code</p>
+          <p>SSID <input type="text" name="ssid"></p>
+          <p>Encryption <select name="encryption">
+            <option value="WPA">WPA/WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="nopass">None</option>
+          </select></p>
+          <p>Passphrase <input type="text" name="passphrase"></p>
+          <p>Hidden SSID <input type="checkbox" name="hidden"></p>
+        </form>
+        <textarea>Never gonna give you up</textarea>
+        <p><input type="radio" name="paper-size" value="8-5_11">8.5"x11"</p>
+        <p><input type="radio" name="paper-size" value="A4">A4</p>
+
+        <div class="giraffe">
+          <div class="frame lean-left"><object data="giraffes/1/giraffe.svg" type=""></object></div>
+          <picture>
+            <source class="void" srcset="giraffes/1/void.jpg" media="not all">
+            <source class="fill" srcset="giraffes/1/fill.jpg" media="not all">
+          </picture>
+          <div>
+            Download: <button class="download-pdf">pdf</button> | jpg | SVG
+          </div>
+        </div>
+      </div>
+      <div class="right-rail">
+        
+        <div class="giraffe">
+          <div class="giraffe frame lean-right"><object data="giraffes/2/giraffe.svg" type=""></object></div>
+          <picture>
+            <source class="void" srcset="giraffes/2/void.jpg" media="not all">
+            <source class="fill" srcset="giraffes/2/fill.jpg" media="not all">
+          </picture>
+          <div>
+            Download: <button class="download-pdf">pdf</button> | jpg | SVG
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="index.ts" defer></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<svg version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1100 850" width="100%" height="100%" preserveAspectRatio="xMinYMin meet">
+  <svg id="inner" viewBox="0 0 1200 1200" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+    <image id="fill" width="100%" height="100%" xlink:href="fill.jpg?width=300&height=300" preserveAspectRatio="xMidYMid meet"></image>
+    <image id="void" width="100%" height="100%" xlink:href="void.jpg?width=300&height=300" preserveAspectRatio="xMidYMid meet" mask='url("#qrCodeMask")'></image>
+    <defs>
+      <g width="150" height="150" id="qrcode"></g>
+      <pattern width="150" height="300" id="qrCodePattern" patternUnits="userSpaceOnUse" patternTransform="rotate(-13)">
+        <use xlink:href="#qrcode"></use>
+        <use xlink:href="#qrcode" x="-100" y="150"></use>
+        <use xlink:href="#qrcode" x="50" y="150"></use>
+      </pattern>
+      <mask id="qrCodeMask">
+        <rect id="qrCodeMaskRect" width="2400" height="2400" fill='url("#qrCodePattern")'></rect>
+      </mask>
+    </defs>
+  </svg>
+</svg>
