@@ -42,7 +42,7 @@ async function init() {
 
   document.addEventListener("click", (event) => {
     const target: HTMLButtonElement = event.target as HTMLButtonElement;
-    if (target.matches(".download-pdf")) {
+    if (target.matches(".download-svg")) {
       event.stopPropagation();
       const giraffe = target.closest(".giraffe");
       const toDataURL = (url: string) =>
@@ -67,8 +67,14 @@ async function init() {
         svg.querySelector<SVGImageElement>("#void").setAttribute("href", voidData);
         const doc = new jsPDF({ unit: "in", orientation: "landscape" });
         void doc.svg(svg.documentElement, { width: 1100, height: 850 }).then(() => {
-          // save the created pdf
-          doc.save("myPDF.pdf");
+          const as_text = new XMLSerializer().serializeToString(svg);
+          // store in a Blob
+          const blob = new Blob([as_text], { type: "image/svg+xml" });
+          // create an URI pointing to that blob
+          const url = URL.createObjectURL(blob);
+          const win = open(url);
+          // so the Garbage Collector can collect the blob
+          win.onload = (evt) => URL.revokeObjectURL(url);
         });
       });
     }
