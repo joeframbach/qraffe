@@ -25,5 +25,5 @@ npm start
 To deploy, run:
 
 ```
-npm release
+npm run release
 ```

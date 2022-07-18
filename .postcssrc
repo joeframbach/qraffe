@@ -2,7 +2,6 @@
   "plugins": {
     "postcss-import": true,
     "postcss-nested": true,
-    "autoprefixer": true,
     "cssnano": true
   }
 }

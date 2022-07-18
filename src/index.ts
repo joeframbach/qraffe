@@ -1,7 +1,5 @@
 import { toString } from "qrcode";
 import { WifiAuthenticationType, encodeWifiConfig } from "wifi-qr";
-import { jsPDF } from "jspdf";
-import "svg2pdf.js";
 
 async function waitForSvg(object: HTMLObjectElement): Promise<void> {
   if (object?.contentDocument?.querySelector("#qrcode")) {
@@ -65,17 +63,14 @@ async function init() {
         const svg = giraffe.querySelector("object").contentDocument.cloneNode(true) as Document;
         svg.querySelector<SVGImageElement>("#fill").setAttribute("href", fillData);
         svg.querySelector<SVGImageElement>("#void").setAttribute("href", voidData);
-        const doc = new jsPDF({ unit: "in", orientation: "landscape" });
-        void doc.svg(svg.documentElement, { width: 1100, height: 850 }).then(() => {
-          const as_text = new XMLSerializer().serializeToString(svg);
-          // store in a Blob
-          const blob = new Blob([as_text], { type: "image/svg+xml" });
-          // create an URI pointing to that blob
-          const url = URL.createObjectURL(blob);
-          const win = open(url);
-          // so the Garbage Collector can collect the blob
-          win.onload = (evt) => URL.revokeObjectURL(url);
-        });
+        const as_text = new XMLSerializer().serializeToString(svg);
+        // store in a Blob
+        const blob = new Blob([as_text], { type: "image/svg+xml" });
+        // create an URI pointing to that blob
+        const url = URL.createObjectURL(blob);
+        const win = open(url);
+        // so the Garbage Collector can collect the blob
+        win.onload = () => URL.revokeObjectURL(url);
       });
     }
   });
